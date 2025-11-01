@@ -1,0 +1,164 @@
+﻿using Monitoreo;
+using ReinicioSistema;
+using Historial;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace User
+{
+    public class Menu
+    {
+        public void Menu1()
+        {
+            int opcion0;
+            do
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\t\t\t\t┌──────────────────────────────────┐");
+                Console.WriteLine("\t\t\t\t|Bienvenido al sistema de monitoreo|");
+                Console.WriteLine("\t\t\t\t└──────────────────────────────────┘");
+                Console.ResetColor();
+                Console.Write("\n\t\t | 1) Iniciar sesión \n\t\t | 2) Salir\n\t\t");
+                opcion0 = int.Parse(Console.ReadLine());
+                //--------------------------------------------------------------------
+
+                switch (opcion0)
+                {
+                    case 1:
+                        UserLogin();
+                        Menucito();
+                        Console.Clear();
+                        break;
+                    case 2:
+                        Console.Clear();
+                        Console.WriteLine("Saliendo...");
+                        break;
+                    default:
+                        Console.WriteLine("Opcion no valida");
+                        break;
+                }
+            } while (opcion0 != 2);
+        }
+        static void UserLogin()
+        {
+            string usuario, contraseña;
+            Console.Clear();
+            do {
+                
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("Ingrese su usuario: ");
+                usuario = Console.ReadLine();
+                Console.Write("Ingrese su contraseña: ");
+
+            // --- INICIO DEL CAMBIO ---
+            // Ya no usamos Console.ReadLine() para la contraseña.
+
+                contraseña = ""; // Inicializamos la variable que guardará la contraseña
+                ConsoleKeyInfo tecla; // Variable para guardar la tecla presionada
+
+                do
+                {
+                // 1. Lee la tecla presionada, 'true' evita que se muestre
+                    tecla = Console.ReadKey(true);
+
+                // 2. Maneja la tecla "Backspace" (Borrar)
+                    if (tecla.Key == ConsoleKey.Backspace && contraseña.Length > 0)
+                    {
+                    // Borra el último caracter de nuestra variable
+                        contraseña = contraseña.Substring(0, contraseña.Length - 1);
+
+                    // Mueve el cursor hacia atrás, escribe un espacio 
+                    // para borrar el '*' y vuelve a mover el cursor hacia atrás.
+                        Console.Write("\b \b");
+                    }
+                // 3. Maneja cualquier otra tecla (excepto Enter y controles)
+                    else if (tecla.Key != ConsoleKey.Backspace && tecla.Key != ConsoleKey.Enter)
+                    {
+                    // Guarda la tecla en nuestra variable
+                        contraseña += tecla.KeyChar;
+
+                    // Muestra un asterisco en la consola
+                        Console.Write("*");
+                    }
+
+                // 4. El bucle se detiene cuando el usuario presiona "Enter"
+                } while (tecla.Key != ConsoleKey.Enter);
+
+            // Agregamos un salto de línea, ya que ReadKey no lo hace
+                Console.WriteLine();
+
+            // --- FIN DEL CAMBIO ---
+
+                Console.ResetColor();
+
+                if (usuario == "admin" && contraseña == "123")
+                {
+                    Console.BackgroundColor = ConsoleColor.White;
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Inicio de sesión exitoso");
+                    Console.ResetColor();
+                    Thread.Sleep(2000);
+                    Console.Clear();
+                    break;
+                }
+                else
+                {
+                    Console.BackgroundColor = ConsoleColor.White;
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Usuario o contraseña incorrectos");
+                    Thread.Sleep(2000);
+                    Console.ResetColor();
+                    Console.Clear();
+                }
+            }while(true);
+        }
+        static void Menucito()
+        {
+            Sensores sensores = new Sensores();
+            Reinicio reinicio = new Reinicio();
+            VerHistorial historial = new VerHistorial();
+            int opcion1;
+            do
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("\t\t\t\t┌──────────────┐");
+                Console.WriteLine("\t\t\t\t|Menú Principal|");
+                Console.WriteLine("\t\t\t\t└──────────────┘");
+                Console.Write("\t\t|1) Monitorear \n\t\t|2) Reiniciar sistema\n\t\t|3) Historial de alertas\n\t\t|0) Salir\n\t\t");
+                Console.ResetColor();
+                opcion1 = int.Parse(Console.ReadLine());
+                switch (opcion1)
+                {
+                    case 1:
+                        Console.Clear();
+                        sensores.sensores_temp();
+                        sensores.alerta_temp();
+                        sensores.Reporte();
+                        break;
+                    case 2:
+                        Console.Clear();
+                        reinicio.ReinicioSensore();
+                        break;
+                    case 3:
+                        Console.Clear();
+                        historial.Historial(ref sensores.alertas);
+                        break;
+                    case 0:
+                        Console.WriteLine("Saliendo...");
+                        Thread.Sleep(1000);
+                        Console.Clear();
+                        break;
+                    default:
+                        Console.WriteLine("Opcion no valida");
+                        Thread.Sleep(1000);
+                        break;
+                }
+            }
+            while (opcion1 != 0);
+        }
+    }
+}
