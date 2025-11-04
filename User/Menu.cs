@@ -50,9 +50,10 @@ namespace User
             do {
                 
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write("Ingrese su usuario: ");
+                Console.WriteLine("\t\t┌─────────────────────────────");//┐
+                Console.Write("\t\t| Ingrese su usuario: ");
                 usuario = Console.ReadLine();
-                Console.Write("Ingrese su contraseña: ");
+                Console.Write("\t\t| Ingrese su contraseña: ");
 
             // --- INICIO DEL CAMBIO ---
             // Ya no usamos Console.ReadLine() para la contraseña.
@@ -90,8 +91,9 @@ namespace User
 
             // Agregamos un salto de línea, ya que ReadKey no lo hace
                 Console.WriteLine();
-
-            // --- FIN DEL CAMBIO ---
+                Console.WriteLine("\t\t|");
+                Console.Write("\t\t|");
+                // --- FIN DEL CAMBIO ---
 
                 Console.ResetColor();
 
@@ -99,7 +101,7 @@ namespace User
                 {
                     Console.BackgroundColor = ConsoleColor.White;
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Inicio de sesión exitoso");
+                    Console.Write("Inicio de sesión exitoso\n");
                     Console.ResetColor();
                     Thread.Sleep(2000);
                     Console.Clear();
@@ -109,7 +111,7 @@ namespace User
                 {
                     Console.BackgroundColor = ConsoleColor.White;
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Usuario o contraseña incorrectos");
+                    Console.Write("Usuario o contraseña incorrectos\n");
                     Thread.Sleep(2000);
                     Console.ResetColor();
                     Console.Clear();
