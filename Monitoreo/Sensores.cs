@@ -10,9 +10,10 @@ namespace Monitoreo
 {
     public class Sensores
     {
-        public String[] alertas = new String[9];//arreglo para guardar las alertas
-        public int cont=0;//contador para las alertas
-        public int s1, s2, s3, s4, s5;//para sacar valores de los sensores
+        public String[] alertas = new String[5];//arreglo para guardar las alertas
+        public int cont=0;//contador para las alertas y numero que va dentro dentro del array (Longitud) de array
+        public int s1, s2, s3, s4, s5;//para sacar valores de los sensores de temperatura
+        public int h1, h2, h3, h4, h5;//para sacar valores de los sensores de humo
         //-----------------------------------------------------------------------------------------------------------------------------------
         Sonidos sonidos = new Sonidos();
         public void sensores_temp()
@@ -21,6 +22,7 @@ namespace Monitoreo
             Random random = new Random();
             do
             {
+                // sensores de temperatura--------------------------------------------------------
                 int sensor1 = random.Next(10, 99);
                 s1 = sensor1;
                 int sensor2 = random.Next(10, 99);
@@ -31,6 +33,19 @@ namespace Monitoreo
                 s4 = sensor4;
                 int sensor5 = random.Next(10, 99);
                 s5 = sensor5;
+
+                //sensores de humo --------------------------------------------------------------
+                int sensorHumo1 = random.Next(10, 17);
+                h1 = sensorHumo1;
+                int sensorHumo2 = random.Next(10, 17);
+                h2 = sensorHumo2;
+                int sensorHumo3 = random.Next(10, 17);
+                h3 = sensorHumo3;
+                int sensorHumo4 = random.Next(10, 17);
+                h4 = sensorHumo4;
+                int sensorHumo5 = random.Next(10, 17);
+                h5 = sensorHumo5;
+
                 //---------------MAPA-------------------------------------------------------------
 
                 Console.WriteLine("┌──────────────────────────────────────────────────────┐");
@@ -38,29 +53,58 @@ namespace Monitoreo
                 if (sensor1 > 90)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("     S1: " + sensor1);
+                    Console.Write("    T1: " + sensor1+"°");
                     Console.ResetColor();
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write("     S1: " + sensor1);
+                    Console.Write("    T1: " + sensor1+"°");
                     Console.ResetColor();
                 }
                 Console.Write("               |");
                 if (sensor2 > 90)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("     S2: " + sensor2);
+                    Console.Write("     T2: " + sensor2+"°");
                     Console.ResetColor();
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write("     S2: " + sensor2);
+                    Console.Write("     T2: " + sensor2+"°");
                     Console.ResetColor();
                 }
-                Console.Write("                |");
+                Console.Write("               |");
+                //humo----------------------------------------
+                Console.Write("\n|");
+                if (h1 > 15)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("    H1: " + h1+"%");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("    H1: " + h1+"%");
+                    Console.ResetColor();
+                }
+                Console.Write("               |");
+                if (h2 > 15)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("     H2: " + h2+"%");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("     H2: " + h2+"%");
+                    Console.ResetColor();
+                }
+                Console.Write("               |");
+
                 Console.WriteLine("\n|                          |                           |");
                 Console.WriteLine("|                          |                           |");
                 Console.WriteLine("|        Almacén           |        Máquinas 1         |");
@@ -73,42 +117,85 @@ namespace Monitoreo
                 if (sensor3 > 90)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("    S3: " + sensor3);
+                    Console.Write("   T3: " + sensor3+"°");
                     Console.ResetColor();
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write("    S3: " + sensor3);
+                    Console.Write("   T3: " + sensor3+"°");
                     Console.ResetColor();
                 }
                 Console.Write("  |");
                 if (sensor4 > 90)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("    S4: " + sensor4);
+                    Console.Write("   T4: " + sensor4+"°");
                     Console.ResetColor();
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write("    S4: " + sensor4);
+                    Console.Write("   T4: " + sensor4+"°");
                     Console.ResetColor();
                 }
                 Console.Write("   |");
                 if (sensor5 > 90)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("         S5: " + sensor5);
+                    Console.Write("        T5: " + sensor5+"°");
                     Console.ResetColor();
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write("         S5: " + sensor5);
+                    Console.Write("        T5: " + sensor5+"°");
                     Console.ResetColor();
                 }
                 Console.Write("            |");
+                //humo----------------------------------------
+
+                Console.Write("\n|");
+                if (h3 > 15)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("   H3: " + h3 + "%");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("   H3: " + h3 + "%");
+                    Console.ResetColor();
+                }
+                Console.Write("  |");
+                if (h4 > 15)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("   H4: " + h4 + "%");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("   H4: " + h4 + "%");
+                    Console.ResetColor();
+                }
+                Console.Write("   |");
+                if (h5 > 15)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("        H5: " + h5 + "%");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("        H5: " + h5 + "%");
+                    Console.ResetColor();
+                }
+                Console.Write("            |");
+
                 Console.WriteLine("\n|            |             |                           |");
                 Console.WriteLine("|  Sala 1    |  Sala 2     |        Máquinas 2         |");
                 Console.WriteLine("|            |             |                           |");
@@ -117,14 +204,14 @@ namespace Monitoreo
 
 
                 //verificar si algun sensor supera el umbral de 90-------------------------------------
-                if (sensor1 > 90 | sensor2 > 90 | sensor3 > 90 | sensor4 > 90 | sensor5 > 90)
+                if (sensor1 > 90 | sensor2 > 90 | sensor3 > 90 | sensor4 > 90 | sensor5 > 90 | h1 > 15 | h2 > 15 | h3 > 15 | h4 > 15 | h5 > 15)
                 {
                     sonidos.ReproducirAlerta();
                     break;
                 }
 
                 //tiempo de reinicio del mapa------------------------------------------------------------
-                Thread.Sleep(1000);
+                Thread.Sleep(5000);
                 Console.Clear();
                 Console.ResetColor();
             }
@@ -135,126 +222,180 @@ namespace Monitoreo
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("┌─────────────────────────────────────────────┐");
-            Console.WriteLine("|        ¡ALERTA DE TEMPERATURA!              |");
-            Console.WriteLine("├─────────────────────────────────────────────┤");
-            Console.Write("|   Luces estroboscópicas encendidas ");
-            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\t\t\t\t┌─────────────────────────────────────────────┐");
+            Console.WriteLine("\t\t\t\t|        ¡ALERTA DE TEMPERATURA!              |");
+            Console.WriteLine("\t\t\t\t├─────────────────────────────────────────────┤");
+            Console.Write("\t\t\t\t|   Luces estroboscópicas encendidas ");
+            Console.BackgroundColor = ConsoleColor.DarkCyan;
             Console.Write("   ");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("      |");
-            Console.ResetColor();
-            Console.WriteLine("\n├─────────────────────────────────────────────┤");
-            Console.Write("|");
-            Console.ForegroundColor = ConsoleColor.Red;
+            //Console.ResetColor();
+            Console.WriteLine("\n\t\t\t\t├─────────────────────────────────────────────┤");
+            Console.Write("\t\t\t\t|");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.Write("           Evacuando personal");
             Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("                |\n");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("|           REINICIE EL SISTEMA               |");
+            //Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\t\t\t\t|           REINICIE EL SISTEMA               |");
+            //Console.ResetColor();
+            Console.WriteLine("\t\t\t\t└─────────────────────────────────────────────┘");
             Console.ResetColor();
-            Console.WriteLine("└─────────────────────────────────────────────┘");
+
 
             //--------------Lugar de riesgo----------------------------------------------------------------
-            Console.Write("\nAlmacén:    ");
+           
+            
+            Console.Write("\n\n\t\t\t\tAlmacén:    ");
             if (s1 > 90)
             {
                 Console.BackgroundColor = ConsoleColor.Red;
-                Console.Write(s1 + "°");
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.Write("  Humo: Si");
+                Console.Write("Temperatura: " + s1 + "° ");
             }
             else
             {
                 Console.BackgroundColor = ConsoleColor.Green;
-                Console.Write(s1 + "°");
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.Write("  Humo: No");
+                Console.Write("Temperatura: " + s1 + "° ");
             }
-
+            if (h1 > 15)
+            {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("  Humo: "+h1+"%");
+            }
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("  Humo: "+h1+"%");
+            }
             Console.ResetColor();
-            Console.Write("\nMáquinas 1: ");
+            //maquinas 1----------------------------------------------------------------
+            Console.Write("\n\t\t\t\tMáquinas 1: ");
             if (s2 > 90)
             {
                 Console.BackgroundColor = ConsoleColor.Red;
-                Console.Write(s2 + "°");
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.Write("  Humo: Si");
+                Console.Write("Temperatura: " + s2 + "° ");
             }
             else
             {
                 Console.BackgroundColor = ConsoleColor.Green;
-                Console.Write(s2 + "°");
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.Write("  Humo: No");
+                Console.Write("Temperatura: " + s2 + "° ");
             }
-
+            if (h2 > 15)
+            {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("  Humo: "+h2+"%");
+            }
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("  Humo: "+h2+"%");
+            }
             Console.ResetColor();
-            Console.Write("\nSala 1:     ");
+            //sala 1----------------------------------------------------------------
+            Console.Write("\n\t\t\t\tSala 1:     ");
             if (s3 > 90)
             {
                 Console.BackgroundColor = ConsoleColor.Red;
-                Console.Write(s3 + "°");
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.Write("  Humo: Si");
+                Console.Write("Temperatura: " + s3 + "° ");
             }
             else
             {
                 Console.BackgroundColor = ConsoleColor.Green;
-                Console.Write(s3 + "°");
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.Write("  Humo: No");
+                Console.Write("Temperatura: " + s3 + "° ");
             }
-
+            if (h3 > 15)
+            {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("  Humo: "+h3+"%");
+            }
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("  Humo: "+h3+"%");
+            }
             Console.ResetColor();
-            Console.Write("\nSala 2:     ");
+            //sala 2----------------------------------------------------------------
+            Console.Write("\n\t\t\t\tSala 2:     ");
             if (s4 > 90)
             {
                 Console.BackgroundColor = ConsoleColor.Red;
-                Console.Write(s4 + "°");
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.Write("  Humo: Si");
+                Console.Write("Temperatura: " + s4 + "° ");
             }
             else
             {
                 Console.BackgroundColor = ConsoleColor.Green;
-                Console.Write(s4 + "°");
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.Write("  Humo: No");
+                Console.Write("Temperatura: " + s4 + "° ");
             }
-
+            if (h4 > 15)
+            {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("  Humo: "+h4+"%");
+            }
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("  Humo: "+h4+"%");
+            }
             Console.ResetColor();
-            Console.Write("\nMáquinas 2: ");
+            //maquinas 2----------------------------------------------------------------
+            Console.Write("\n\t\t\t\tMáquinas 2: ");
             if (s5 > 90)
             {
                 Console.BackgroundColor = ConsoleColor.Red;
-                Console.Write(s5 + "°");
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.Write("  Humo: Si");
+                Console.Write("Temperatura: " + s5 + "° ");
             }
             else
             {
                 Console.BackgroundColor = ConsoleColor.Green;
-                Console.Write(s5 + "°");
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.Write("  Humo: No");
+                Console.Write("Temperatura: " + s5 + "° ");
             }
-
+            if (h5 > 15)
+            {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("  Humo: "+h5+"%");
+            }
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("  Humo: "+h5+"%");
+            }
             Console.ResetColor();
-            Console.WriteLine("\n\nPresione una tecla para llamar a la bomberos");
+            Console.WriteLine("\n\n\n\t\tPresione una tecla para llamar a la bomberos");
             Console.ReadKey();
             Console.Clear();
         }
         //-----------------------------------------------------------------------------------------------------------------------------------
+       
+        
         public void Reporte()
         {
+            if (cont == 5)
+            {
+                for (int i = 0; i < alertas.Length ; i++)
+                {
+                    alertas[i] = null;
+                }
+                cont = 0;
+            }
             alertas[cont] = DateTime.Now.ToString();
             cont++;
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Reporte del caso:");
-            Console.WriteLine("Fecha y hora: " + DateTime.Now);
-            Console.WriteLine("Llamando a los bomberos...");
+            Console.WriteLine("\n\n\t\t\t\tReporte del caso:");
+            Console.WriteLine("\t\t\t\tFecha y hora: " + DateTime.Now);
+            Console.WriteLine("\t\t\t\tLlamando a los bomberos...");
             sonidos.ReproducirLLamada();
             Console.Clear();
         }

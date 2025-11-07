@@ -22,7 +22,7 @@ namespace User
                 Console.WriteLine("\t\t\t\t|Bienvenido al sistema de monitoreo|");
                 Console.WriteLine("\t\t\t\t└──────────────────────────────────┘");
                 Console.ResetColor();
-                Console.Write("\n\t\t | 1) Iniciar sesión \n\t\t | 2) Salir\n\t\t");
+                Console.Write("\n\t\t | 1) Iniciar sesión \n\t\t | 0) Salir\n\t\t");
                 opcion0 = int.Parse(Console.ReadLine());
                 //--------------------------------------------------------------------
 
@@ -33,15 +33,19 @@ namespace User
                         Menucito();
                         Console.Clear();
                         break;
-                    case 2:
+                    case 0:
                         Console.Clear();
                         Console.WriteLine("Saliendo...");
                         break;
                     default:
-                        Console.WriteLine("Opcion no valida");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("\n\n\t\tOpción no válida");
+                        Console.ResetColor();
+                        Thread.Sleep(1500);
+                        Console.Clear();
                         break;
                 }
-            } while (opcion0 != 2);
+            } while (opcion0 != 0);
         }
         static void UserLogin()
         {
@@ -103,7 +107,7 @@ namespace User
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.Write("Inicio de sesión exitoso\n");
                     Console.ResetColor();
-                    Thread.Sleep(2000);
+                    Thread.Sleep(0000);
                     Console.Clear();
                     break;
                 }
@@ -112,7 +116,7 @@ namespace User
                     Console.BackgroundColor = ConsoleColor.White;
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("Usuario o contraseña incorrectos\n");
-                    Thread.Sleep(2000);
+                    Thread.Sleep(1000);
                     Console.ResetColor();
                     Console.Clear();
                 }
@@ -155,8 +159,11 @@ namespace User
                         Console.Clear();
                         break;
                     default:
-                        Console.WriteLine("Opcion no valida");
-                        Thread.Sleep(1000);
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("\n\n\t\tOpción no válida");
+                        Console.ResetColor();
+                        Thread.Sleep(1500);
+                        Console.Clear();
                         break;
                 }
             }
