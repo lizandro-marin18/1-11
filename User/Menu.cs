@@ -107,7 +107,7 @@ namespace User
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.Write("Inicio de sesión exitoso\n");
                     Console.ResetColor();
-                    Thread.Sleep(0000);
+                    Thread.Sleep(1000);
                     Console.Clear();
                     break;
                 }
@@ -151,7 +151,7 @@ namespace User
                         break;
                     case 3:
                         Console.Clear();
-                        historial.Historial(ref sensores.alertas);
+                        historial.Historial(ref sensores.alertas, ref sensores.cont);
                         break;
                     case 0:
                         Console.WriteLine("Saliendo...");

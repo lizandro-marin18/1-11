@@ -10,12 +10,13 @@ namespace Monitoreo
 {
     public class Sensores
     {
-        public String[] alertas = new String[5];//arreglo para guardar las alertas
+        public String[] alertas = new String[9];//arreglo para guardar las alertas
         public int cont=0;//contador para las alertas y numero que va dentro dentro del array (Longitud) de array
         public int s1, s2, s3, s4, s5;//para sacar valores de los sensores de temperatura
         public int h1, h2, h3, h4, h5;//para sacar valores de los sensores de humo
         //-----------------------------------------------------------------------------------------------------------------------------------
         Sonidos sonidos = new Sonidos();
+        //-----------------------------------------------------------------------------------------------------------------------------------
         public void sensores_temp()
         {
             //70-90 estándar y de alerta 90
@@ -211,7 +212,7 @@ namespace Monitoreo
                 }
 
                 //tiempo de reinicio del mapa------------------------------------------------------------
-                Thread.Sleep(5000);
+                Thread.Sleep(1000);
                 Console.Clear();
                 Console.ResetColor();
             }
@@ -382,7 +383,7 @@ namespace Monitoreo
         
         public void Reporte()
         {
-            if (cont == 5)
+            if (cont == 9)
             {
                 for (int i = 0; i < alertas.Length ; i++)
                 {
@@ -393,9 +394,11 @@ namespace Monitoreo
             alertas[cont] = DateTime.Now.ToString();
             cont++;
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n\n\t\t\t\tReporte del caso:");
-            Console.WriteLine("\t\t\t\tFecha y hora: " + DateTime.Now);
-            Console.WriteLine("\t\t\t\tLlamando a los bomberos...");
+            Console.WriteLine("\n\n\t\t\t\t┌────────────────────────────────────────────┐");
+            Console.WriteLine("\t\t\t\t│Reporte del caso:                           │");
+            Console.WriteLine("\t\t\t\t│Fecha y hora: " + DateTime.Now + "            │");
+            Console.WriteLine("\t\t\t\t│Llamando a los bomberos...                  │");
+            Console.WriteLine("\t\t\t\t└────────────────────────────────────────────┘");
             sonidos.ReproducirLLamada();
             Console.Clear();
         }

@@ -23,7 +23,7 @@ namespace Multimedia
             WindowsMediaPlayer player = new WindowsMediaPlayer();
             player.URL = $"2.mp3";
             player.controls.play();
-            Thread.Sleep(5000);
+            Thread.Sleep(6000);
             player.controls.stop();
         }
     }

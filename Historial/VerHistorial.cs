@@ -8,7 +8,7 @@ namespace Historial
 {
     public class VerHistorial
     {
-        public void Historial(ref string[] alertas)
+        public void Historial(ref string[] alertas, ref int contador)
         {
             Console.WriteLine("Mostrando historial de eventos...");
                 for (int i = 0; i < alertas.Length; i++)
@@ -20,7 +20,11 @@ namespace Historial
                     else
                         Console.WriteLine($"Alerta {i + 1}: {alertas[i]}");
                 }
-            Console.WriteLine("Presiona cualquier tecla para continuar...");
+                if (contador == 9)
+                {
+                    Console.WriteLine($"\nEl historial está lleno. Los elementos más antiguos se eliminarán automáticamente.");
+                }
+            Console.WriteLine("\nPresiona cualquier tecla para continuar...");
             Console.ReadKey();
             Console.Clear();
         }

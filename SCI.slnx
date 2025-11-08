@@ -1,7 +1,7 @@
 <Solution>
   <Folder Name="/Elementos de la solución/">
+    <File Path="../../../Desktop/Fundamentos de algoritmos/sonido alamr sci/2.mp3" />
     <File Path="../../Fundamentos de algoritmos/sonido alamr sci/1.mp3" />
-    <File Path="../../sci-2/Proyecto/bin/Debug/2.mp3" />
   </Folder>
   <Project Path="Definitiva-SCI/P-Princ.csproj" Id="dbf56fa0-9e0c-4c13-826f-9ac8c384c323" />
   <Project Path="Historial/Historial.csproj" Id="0836aebc-033c-4174-8790-07cb18faeafa" />
