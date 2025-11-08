@@ -50,7 +50,7 @@ namespace Monitoreo
                 //---------------MAPA-------------------------------------------------------------
 
                 Console.WriteLine("┌──────────────────────────────────────────────────────┐");
-                Console.Write("|");
+                Console.Write("│");
                 if (sensor1 > 90)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -63,7 +63,7 @@ namespace Monitoreo
                     Console.Write("    T1: " + sensor1+"°");
                     Console.ResetColor();
                 }
-                Console.Write("               |");
+                Console.Write("               │");
                 if (sensor2 > 90)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -76,9 +76,9 @@ namespace Monitoreo
                     Console.Write("     T2: " + sensor2+"°");
                     Console.ResetColor();
                 }
-                Console.Write("               |");
+                Console.Write("               │");
                 //humo----------------------------------------
-                Console.Write("\n|");
+                Console.Write("\n│");
                 if (h1 > 15)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -91,7 +91,7 @@ namespace Monitoreo
                     Console.Write("    H1: " + h1+"%");
                     Console.ResetColor();
                 }
-                Console.Write("               |");
+                Console.Write("               │");
                 if (h2 > 15)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -104,17 +104,17 @@ namespace Monitoreo
                     Console.Write("     H2: " + h2+"%");
                     Console.ResetColor();
                 }
-                Console.Write("               |");
+                Console.Write("               │");
 
-                Console.WriteLine("\n|                          |                           |");
-                Console.WriteLine("|                          |                           |");
-                Console.WriteLine("|        Almacén           |        Máquinas 1         |");
-                Console.WriteLine("|                          |                           |");
-                Console.WriteLine("|                          |    ____________________   |");
-                Console.WriteLine("|                                                      |");
-                Console.WriteLine("|                                                      |");
-                Console.WriteLine("|   ---------|   ----------|    --------------------   |");
-                Console.Write("|");
+                Console.WriteLine("\n│                          │                           │");
+                Console.WriteLine("│                          │                           │");
+                Console.WriteLine("│        Almacén           │        Máquinas 1         │");
+                Console.WriteLine("│                          │                           │");
+                Console.WriteLine("│                          │    ────────────────────   │");
+                Console.WriteLine("│                                                      │");
+                Console.WriteLine("│                                                      │");
+                Console.WriteLine("│   ─────────┐   ──────────┐    ────────────────────   │");
+                Console.Write("│");
                 if (sensor3 > 90)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -127,7 +127,7 @@ namespace Monitoreo
                     Console.Write("   T3: " + sensor3+"°");
                     Console.ResetColor();
                 }
-                Console.Write("  |");
+                Console.Write("  │");
                 if (sensor4 > 90)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -140,7 +140,7 @@ namespace Monitoreo
                     Console.Write("   T4: " + sensor4+"°");
                     Console.ResetColor();
                 }
-                Console.Write("   |");
+                Console.Write("   │");
                 if (sensor5 > 90)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -153,10 +153,10 @@ namespace Monitoreo
                     Console.Write("        T5: " + sensor5+"°");
                     Console.ResetColor();
                 }
-                Console.Write("            |");
+                Console.Write("            │");
                 //humo----------------------------------------
 
-                Console.Write("\n|");
+                Console.Write("\n│");
                 if (h3 > 15)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -169,7 +169,7 @@ namespace Monitoreo
                     Console.Write("   H3: " + h3 + "%");
                     Console.ResetColor();
                 }
-                Console.Write("  |");
+                Console.Write("  │");
                 if (h4 > 15)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -182,7 +182,7 @@ namespace Monitoreo
                     Console.Write("   H4: " + h4 + "%");
                     Console.ResetColor();
                 }
-                Console.Write("   |");
+                Console.Write("   │");
                 if (h5 > 15)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -195,12 +195,12 @@ namespace Monitoreo
                     Console.Write("        H5: " + h5 + "%");
                     Console.ResetColor();
                 }
-                Console.Write("            |");
+                Console.Write("            │");
 
-                Console.WriteLine("\n|            |             |                           |");
-                Console.WriteLine("|  Sala 1    |  Sala 2     |        Máquinas 2         |");
-                Console.WriteLine("|            |             |                           |");
-                Console.WriteLine("|            |             |                           |");
+                Console.WriteLine("\n│            │             │                           │");
+                Console.WriteLine("│  Sala 1    │  Sala 2     │        Máquinas 2         │");
+                Console.WriteLine("│            │             │                           │");
+                Console.WriteLine("│            │             │                           │");
                 Console.WriteLine("└──────────────────────────────────────────────────────┘");
 
 
@@ -224,32 +224,35 @@ namespace Monitoreo
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("\t\t\t\t┌─────────────────────────────────────────────┐");
-            Console.WriteLine("\t\t\t\t|        ¡ALERTA DE TEMPERATURA!              |");
+            Console.WriteLine("\t\t\t\t│        ¡ALERTA DE TEMPERATURA!              │");
             Console.WriteLine("\t\t\t\t├─────────────────────────────────────────────┤");
-            Console.Write("\t\t\t\t|   Luces estroboscópicas encendidas ");
+            Console.Write("\t\t\t\t│   Luces estroboscópicas encendidas ");
             Console.BackgroundColor = ConsoleColor.DarkCyan;
             Console.Write("   ");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("      |");
+            Console.Write("      │");
             //Console.ResetColor();
             Console.WriteLine("\n\t\t\t\t├─────────────────────────────────────────────┤");
-            Console.Write("\t\t\t\t|");
+            Console.Write("\t\t\t\t│");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("           Evacuando personal");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("                |\n");
+            Console.Write("                │\n");
             //Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\t\t\t\t|           REINICIE EL SISTEMA               |");
+            Console.WriteLine("\t\t\t\t│           REINICIE EL SISTEMA               │");
             //Console.ResetColor();
             Console.WriteLine("\t\t\t\t└─────────────────────────────────────────────┘");
             Console.ResetColor();
 
 
             //--------------Lugar de riesgo----------------------------------------------------------------
-           
-            
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\n\t\t\t\t┌─────────────────────────────────────────────┐");
+            Console.WriteLine("\t\t\t\t│               LUGAR DE RIESGO               │");
+            Console.WriteLine("\t\t\t\t└─────────────────────────────────────────────┘");
+            Console.ResetColor();
             Console.Write("\n\n\t\t\t\tAlmacén:    ");
             if (s1 > 90)
             {
@@ -374,7 +377,9 @@ namespace Monitoreo
                 Console.Write("  Humo: "+h5+"%");
             }
             Console.ResetColor();
+            Console.ForegroundColor= ConsoleColor.Yellow;
             Console.WriteLine("\n\n\n\t\tPresione una tecla para llamar a la bomberos");
+            Console.ResetColor();
             Console.ReadKey();
             Console.Clear();
         }

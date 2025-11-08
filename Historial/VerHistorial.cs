@@ -10,8 +10,10 @@ namespace Historial
     {
         public void Historial(ref string[] alertas, ref int contador)
         {
-            Console.WriteLine("Mostrando historial de eventos...");
-                for (int i = 0; i < alertas.Length; i++)
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Mostrando historial de eventos...\n");
+            Console.ResetColor();
+            for (int i = 0; i < alertas.Length; i++)
                 {
                     if (string.IsNullOrEmpty(alertas[i]))
                     {
@@ -22,9 +24,13 @@ namespace Historial
                 }
                 if (contador == 9)
                 {
+                    Console.ForegroundColor= ConsoleColor.Yellow;
                     Console.WriteLine($"\nEl historial está lleno. Los elementos más antiguos se eliminarán automáticamente.");
+                    Console.ResetColor();
                 }
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\nPresiona cualquier tecla para continuar...");
+            Console.ResetColor();
             Console.ReadKey();
             Console.Clear();
         }

@@ -19,7 +19,7 @@ namespace User
             {
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("\t\t\t\t┌──────────────────────────────────┐");
-                Console.WriteLine("\t\t\t\t|Bienvenido al sistema de monitoreo|");
+                Console.WriteLine("\t\t\t\t│Bienvenido al sistema de monitoreo│");
                 Console.WriteLine("\t\t\t\t└──────────────────────────────────┘");
                 Console.ResetColor();
                 Console.Write("\n\t\t | 1) Iniciar sesión \n\t\t | 0) Salir\n\t\t");
@@ -55,9 +55,9 @@ namespace User
                 
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\t\t┌─────────────────────────────");//┐
-                Console.Write("\t\t| Ingrese su usuario: ");
+                Console.Write("\t\t│ Ingrese su usuario: ");
                 usuario = Console.ReadLine();
-                Console.Write("\t\t| Ingrese su contraseña: ");
+                Console.Write("\t\t│ Ingrese su contraseña: ");
 
             // --- INICIO DEL CAMBIO ---
             // Ya no usamos Console.ReadLine() para la contraseña.
@@ -95,8 +95,8 @@ namespace User
 
             // Agregamos un salto de línea, ya que ReadKey no lo hace
                 Console.WriteLine();
-                Console.WriteLine("\t\t|");
-                Console.Write("\t\t|");
+                Console.WriteLine("\t\t│");
+                Console.Write("\t\t│");
                 // --- FIN DEL CAMBIO ---
 
                 Console.ResetColor();
@@ -132,7 +132,7 @@ namespace User
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("\t\t\t\t┌──────────────┐");
-                Console.WriteLine("\t\t\t\t|Menú Principal|");
+                Console.WriteLine("\t\t\t\t│Menú Principal│");
                 Console.WriteLine("\t\t\t\t└──────────────┘");
                 Console.Write("\t\t|1) Monitorear \n\t\t|2) Reiniciar sistema\n\t\t|3) Historial de alertas\n\t\t|0) Salir\n\t\t");
                 Console.ResetColor();
