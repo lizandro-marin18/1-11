@@ -65,22 +65,22 @@ namespace User
 
                 do
                 {
-                    tecla = Console.ReadKey(true); //Lee la tecla presionada, 'true' evita que se muestre
+                    tecla = Console.ReadKey(true); //Lee la tecla presionada, true evita que se muestre
 
-                    if (tecla.Key == ConsoleKey.Backspace && contraseña.Length > 0) //Maneja la tecla "Backspace" (Borrar)
+                    if (tecla.Key == ConsoleKey.Backspace && contraseña.Length > 0) //Maneja la tecla Backspace (Borrar)
                     {
-                        contraseña = contraseña.Substring(0, contraseña.Length - 1); //Borra el último caracter de nuestra variable
-                        Console.Write("\b \b");// Mueve el cursor hacia atrás, escribe un espacio para borrar el '*' y vuelve a mover el cursor hacia atrás.
+                        contraseña = contraseña.Substring(0, contraseña.Length - 1); //Borra el último caracter de la variable
+                        Console.Write("\b \b");// Mueve el cursor hacia atrás, escribe un espacio para borrar el * y vuelve a mover el cursor hacia atrás.
                     }
                 
-                    else if (tecla.Key != ConsoleKey.Backspace && tecla.Key != ConsoleKey.Enter)// Maneja cualquier otra tecla (excepto Enter y controles)
+                    else if (tecla.Key != ConsoleKey.Backspace && tecla.Key != ConsoleKey.Enter)
                     {
                         
                         contraseña += tecla.KeyChar; // Guarda la tecla en la variable
-                        Console.Write("*");// Muestra un asterisco en la consola
+                        Console.Write("*");
                     }
 
-                } while (tecla.Key != ConsoleKey.Enter);  // El bucle se detiene cuando el usuario presiona enter
+                } while (tecla.Key != ConsoleKey.Enter);
 
                 Console.WriteLine();
                 Console.WriteLine("\t\t│");
