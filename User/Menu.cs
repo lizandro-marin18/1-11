@@ -70,7 +70,7 @@ namespace User
                     if (tecla.Key == ConsoleKey.Backspace && contraseña.Length > 0) //Maneja la tecla Backspace (Borrar)
                     {
                         contraseña = contraseña.Substring(0, contraseña.Length - 1); //Borra el último caracter de la variable
-                        Console.Write("\b \b");// Mueve el cursor hacia atrás, escribe un espacio para borrar el * y vuelve a mover el cursor hacia atrás.
+                        Console.Write("\b \b"); //Mueve el cursor hacia atrás, escribe un espacio para borrar el * y vuelve a mover el cursor hacia atrás.
                     }
                 
                     else if (tecla.Key != ConsoleKey.Backspace && tecla.Key != ConsoleKey.Enter)
