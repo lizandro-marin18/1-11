@@ -54,51 +54,37 @@ namespace User
             do {
                 
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("\t\t┌─────────────────────────────");//┐
+                Console.WriteLine("\t\t┌─────────────────────────────");
                 Console.Write("\t\t│ Ingrese su usuario: ");
                 usuario = Console.ReadLine();
                 Console.Write("\t\t│ Ingrese su contraseña: ");
 
-            // --- INICIO DEL CAMBIO ---
-            // Ya no usamos Console.ReadLine() para la contraseña.
 
-                contraseña = ""; // Inicializamos la variable que guardará la contraseña
-                ConsoleKeyInfo tecla; // Variable para guardar la tecla presionada
+                contraseña = "";
+                ConsoleKeyInfo tecla; //Variable para guardar la tecla presionada
 
                 do
                 {
-                // 1. Lee la tecla presionada, 'true' evita que se muestre
-                    tecla = Console.ReadKey(true);
+                    tecla = Console.ReadKey(true); //Lee la tecla presionada, 'true' evita que se muestre
 
-                // 2. Maneja la tecla "Backspace" (Borrar)
-                    if (tecla.Key == ConsoleKey.Backspace && contraseña.Length > 0)
+                    if (tecla.Key == ConsoleKey.Backspace && contraseña.Length > 0) //Maneja la tecla "Backspace" (Borrar)
                     {
-                    // Borra el último caracter de nuestra variable
-                        contraseña = contraseña.Substring(0, contraseña.Length - 1);
-
-                    // Mueve el cursor hacia atrás, escribe un espacio 
-                    // para borrar el '*' y vuelve a mover el cursor hacia atrás.
-                        Console.Write("\b \b");
+                        contraseña = contraseña.Substring(0, contraseña.Length - 1); //Borra el último caracter de nuestra variable
+                        Console.Write("\b \b");// Mueve el cursor hacia atrás, escribe un espacio para borrar el '*' y vuelve a mover el cursor hacia atrás.
                     }
-                // 3. Maneja cualquier otra tecla (excepto Enter y controles)
-                    else if (tecla.Key != ConsoleKey.Backspace && tecla.Key != ConsoleKey.Enter)
+                
+                    else if (tecla.Key != ConsoleKey.Backspace && tecla.Key != ConsoleKey.Enter)// Maneja cualquier otra tecla (excepto Enter y controles)
                     {
-                    // Guarda la tecla en nuestra variable
-                        contraseña += tecla.KeyChar;
-
-                    // Muestra un asterisco en la consola
-                        Console.Write("*");
+                        
+                        contraseña += tecla.KeyChar; // Guarda la tecla en la variable
+                        Console.Write("*");// Muestra un asterisco en la consola
                     }
 
-                // 4. El bucle se detiene cuando el usuario presiona "Enter"
-                } while (tecla.Key != ConsoleKey.Enter);
+                } while (tecla.Key != ConsoleKey.Enter);  // El bucle se detiene cuando el usuario presiona enter
 
-            // Agregamos un salto de línea, ya que ReadKey no lo hace
                 Console.WriteLine();
                 Console.WriteLine("\t\t│");
                 Console.Write("\t\t│");
-                // --- FIN DEL CAMBIO ---
-
                 Console.ResetColor();
 
                 if (usuario == "admin" && contraseña == "123")

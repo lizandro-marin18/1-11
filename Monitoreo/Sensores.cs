@@ -232,7 +232,6 @@ namespace Monitoreo
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("      │");
-            //Console.ResetColor();
             Console.WriteLine("\n\t\t\t\t├─────────────────────────────────────────────┤");
             Console.Write("\t\t\t\t│");
             Console.ForegroundColor = ConsoleColor.White;
@@ -240,9 +239,14 @@ namespace Monitoreo
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("                │\n");
-            //Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\t\t\t\t├─────────────────────────────────────────────┤");
+            Console.Write("\t\t\t\t│");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("        ENERGÍA DE RESPALDO ACTIVA  ");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("         │\n");
             Console.WriteLine("\t\t\t\t│           REINICIE EL SISTEMA               │");
-            //Console.ResetColor();
             Console.WriteLine("\t\t\t\t└─────────────────────────────────────────────┘");
             Console.ResetColor();
 
